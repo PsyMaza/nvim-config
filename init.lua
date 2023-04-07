@@ -1,0 +1,8 @@
+require('plugins')
+require('file-explorer')
+require('devicons')
+require('mason-config')
+require('gopls')
+require('code-completion')
+require('debugging')
+require('custom-keys')
