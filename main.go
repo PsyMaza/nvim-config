@@ -1,6 +1,6 @@
 package main
 
-import	(
+import (
 	"fmt"
 )
 
@@ -11,8 +11,10 @@ func main() {
 	test = "hello world"
 
 	fmt.Println(test)
+    PrintText(test)
 }
 
-func printHello() {
-	fmt.Println("hello")
+// something
+func PrintText(test string) {
+	panic("unimplemented")
 }

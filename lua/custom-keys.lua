@@ -4,10 +4,10 @@ local map = vim.api.nvim_set_keymap
 vim.g.mapleader = ","
 
 -- leave insert mode with jk
-map('i', 'jk', '', {})
+map('i', 'jk', '<esc>', {})
 
 -- map the key n to run the command :NvimTreeToggle
-map('n', 'n', [[:NvimTreeToggle<CR>]], {})
+map('n', '<C-n>', [[:NvimTreeToggle<CR>]], {})
 
 -- Press Ctrl+d to toggle debug mode, will remove NvimTree also
 map('n', '<C-d>', [[:NvimTreeToggle<CR> :lua require'dapui'.toggle()<CR>]], {})

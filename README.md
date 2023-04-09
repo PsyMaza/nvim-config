@@ -1,4 +1,4 @@
-# nvim-config
+[#](#.md) nvim-config
 
 Need download Nerd fonts, example Hack Nerd Fonts
 https://github.com/ryanoasis/nerd-fonts#glyph-sets
@@ -13,3 +13,6 @@ Install plugins
 install lsp 
 :MasonInstall gopls
 :MasonInstall delve
+
+install markdown
+:TSInstall markdown markdown_inline
