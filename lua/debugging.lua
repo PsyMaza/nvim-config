@@ -1,5 +1,26 @@
 -- fetch the dap plugin
 local dap = require('dap')
+-- Setup DapUI
+local dapui = require('dapui')
+local nvimtree = require('nvim-tree')
+-- set it up see more configs in their repo
+dapui.setup()
+--nvimtree.toggle()
+
+-- dap fires events, we can listen on them to open UI on certain events
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+  nvimtree.toggle()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  nvimtree.toggle()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  nvimtree.toggle()
+  dapui.close()
+end
+
 -- Add adapter to delve
 dap.adapters.delve = {
   type = 'server',

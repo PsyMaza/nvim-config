@@ -2,14 +2,16 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 --vim.api.nvim_set_hl = 1
+vim.g.nvim_set_hl = 1
 
 -- set termguicolors to enable highlight groups
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 
 -- empty setup using defaults
 require("nvim-tree").setup({
   open_on_setup = true,
   ignore_buffer_on_setup = true,
+  view = {auto_resize = true }
 })
 
 

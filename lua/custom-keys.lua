@@ -1,8 +1,16 @@
 -- fetch keymap
 local map = vim.api.nvim_set_keymap
 
+vim.g.mapleader = ","
+
+-- leave insert mode with jk
+map('i', 'jk', '', {})
+
 -- map the key n to run the command :NvimTreeToggle
 map('n', 'n', [[:NvimTreeToggle<CR>]], {})
+
+-- Press Ctrl+d to toggle debug mode, will remove NvimTree also
+map('n', '<C-d>', [[:NvimTreeToggle<CR> :lua require'dapui'.toggle()<CR>]], {})
 
 -- nvim-dap keymappings
 -- Press f5 to debug
@@ -24,3 +32,6 @@ map('n', '<F6>', [[:lua require'dap'.repl.open()<CR>]], {})
 -- Press dl to run last ran configuration (if you used f5 before it will re run it etc)
 map('n', 'dl', [[:lua require'dap'.run_last()<CR>]], {})
 
+
+-- Clear search highlight
+map('n', '<leader><Space>', '<Cmd>nohlsearch<CR>', { silent = true })
